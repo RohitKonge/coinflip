@@ -7,7 +7,7 @@ const Coin: React.FC = () => {
 
   const flipVariants = {
     flipping: {
-      rotateY: [0, 360, 720, 1080, 1440, 1800],
+      rotateX: [0, 360, 720, 1080, 1440, 1800],
       transition: {
         duration: 1.5,
         ease: "easeInOut",
@@ -15,7 +15,7 @@ const Coin: React.FC = () => {
       }
     },
     static: { 
-      rotateY: result === 'tails' ? 180 : 0,
+      rotateX: result === 'tails' ? 180 : 0,
       transition: {
         duration: 0.3,
         ease: "easeOut"
@@ -67,7 +67,7 @@ const Coin: React.FC = () => {
               backgroundImage: 'linear-gradient(135deg, #f6d365 0%, #d4a017 100%)',
               boxShadow: '0 8px 16px rgba(0,0,0,0.3), inset 0 4px 8px rgba(255,255,255,0.4), inset 0 -4px 8px rgba(0,0,0,0.2)',
               backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)'
+              transform: 'rotateX(180deg)'
             }}
             role="presentation"
           >
