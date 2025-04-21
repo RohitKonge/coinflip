@@ -1,0 +1,26 @@
+{
+  "name": "Just Flip A Coin - Online Random Decision Maker",
+  "short_name": "Coin Flip",
+  "description": "Free online coin flip tool with beautiful 3D animation. Make quick decisions with our random coin flipper.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F6D365",
+  "icons": [
+    {
+      "src": "/coin-favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["utilities", "tools", "random", "decisions"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Flip Coin",
+      "short_name": "Flip",
+      "description": "Quickly flip a coin",
+      "url": "/"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Common misspellings and variations
+/coinflip              /
+/coin-flip             /
+/flipcoin              /
+/flip-coin             /
+/flip                  /
+/toss                  /
+/cointoss              /
+/coin-toss             /
+/random                /
+/heads-or-tails        /
+/headsortails          /
+
+# Legacy URLs and alternates
+/random-coin-flip      /
+/virtual-coin-flip     /
+/online-coin-flip      /
+/coin-flip-simulator   /
+/coin-flipper          /
+
+# Handle 404s with custom page
+/*                     /index.html   200
