@@ -1,7 +1,7 @@
 {
-  "name": "Just Flip A Coin - Online Random Decision Maker",
-  "short_name": "Coin Flip",
-  "description": "Free online coin flip tool with beautiful 3D animation. Make quick decisions with our random coin flipper.",
+  "name": "Flip a Coin - Free Online Random Coin Flip Generator",
+  "short_name": "Flip a Coin",
+  "description": "Best free online coin flip tool with beautiful 3D animation. Make quick decisions with our random coin flipper - instant, fair, and no ads!",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,18 +9,51 @@
   "icons": [
     {
       "src": "/coin-favicon.svg",
-      "sizes": "32x32",
-      "type": "image/svg+xml"
+      "sizes": "32x32 48x48 72x72 96x96 128x128 256x256",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["utilities", "tools", "random", "decisions"],
-  "screenshots": [],
+  "categories": [
+    "utilities",
+    "tools",
+    "games",
+    "entertainment",
+    "productivity"
+  ],
   "shortcuts": [
     {
       "name": "Flip Coin",
       "short_name": "Flip",
-      "description": "Quickly flip a coin",
+      "description": "Instantly flip a coin",
       "url": "/"
+    },
+    {
+      "name": "Heads or Tails",
+      "short_name": "H/T",
+      "description": "Get a heads or tails result",
+      "url": "/heads-or-tails"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Desktop view of coin flip animation"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Mobile view of coin flip tool"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "orientation": "any",
+  "lang": "en-US",
+  "dir": "ltr"
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useFlipStore } from '../store/flipStore';
+import { Coins } from 'lucide-react';
 
 const Coin: React.FC = () => {
   const { isFlipping, result, flipCoin } = useFlipStore();
@@ -24,14 +25,23 @@ const Coin: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8">
-      <div 
-        className="coin-container relative w-96 h-96 cursor-pointer hover:scale-105 transition-transform perspective-[1000px]" 
+    <div className="coin-flipper space-y-8" role="application" aria-label="Coin Flip Tool">
+      <div className="coin-instructions text-center space-y-4">
+        <p className="text-lg text-gray-600">
+          Click or tap the coin to flip it and get a random result
+        </p>
+        {!isFlipping && result && (
+          <p className="text-sm text-gray-500">
+            Last result: {result.toUpperCase()}. Click again to flip again!
+          </p>
+        )}
+      </div>
+
+      <button 
+        className="coin-container relative w-96 h-96 mx-auto block focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full transition-all hover:scale-105" 
         onClick={flipCoin}
-        role="button"
-        aria-label="Flip the coin"
-        tabIndex={0}
-        onKeyPress={(e) => e.key === 'Enter' && flipCoin()}
+        aria-label={isFlipping ? "Coin is flipping" : `Coin showing ${result || 'heads'}. Click to flip`}
+        disabled={isFlipping}
       >
         <motion.div
           className="coin relative w-full h-full"
@@ -39,9 +49,7 @@ const Coin: React.FC = () => {
           variants={flipVariants}
           initial={false}
           style={{ transformStyle: 'preserve-3d' }}
-          aria-live="polite"
-          role="img"
-          aria-label={`Coin showing ${result || 'heads'}`}
+          aria-hidden="true"
         >
           {/* Heads side */}
           <div 
@@ -51,12 +59,10 @@ const Coin: React.FC = () => {
               boxShadow: '0 8px 16px rgba(0,0,0,0.3), inset 0 4px 8px rgba(255,255,255,0.4), inset 0 -4px 8px rgba(0,0,0,0.2)',
               backfaceVisibility: 'hidden'
             }}
-            role="presentation"
           >
             <div className="coin-content relative w-5/6 h-5/6 rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-300 to-yellow-600 border-4 border-yellow-700">
-              <span className="text-6xl font-bold text-yellow-900 select-none">
-                {result === 'heads' ? 'HEADS' : ''}
-              </span>
+              <Coins className="w-24 h-24 text-yellow-900" aria-hidden="true" />
+              <span className="sr-only">Heads</span>
             </div>
           </div>
           
@@ -69,26 +75,41 @@ const Coin: React.FC = () => {
               backfaceVisibility: 'hidden',
               transform: 'rotateX(180deg)'
             }}
-            role="presentation"
           >
             <div className="coin-content relative w-5/6 h-5/6 rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-300 to-yellow-600 border-4 border-yellow-700">
-              <span className="text-6xl font-bold text-yellow-900 select-none">
-                {result === 'tails' ? 'TAILS' : ''}
-              </span>
+              <Coins className="w-24 h-24 text-yellow-900 rotate-180" aria-hidden="true" />
+              <span className="sr-only">Tails</span>
             </div>
           </div>
         </motion.div>
-      </div>
+      </button>
       
-      <div className="text-center" aria-live="assertive">
+      <div 
+        className="result-section text-center" 
+        aria-live="polite" 
+        aria-atomic="true"
+      >
         {!isFlipping && result && (
-          <p className="result-text font-bold text-2xl text-yellow-700 animate-fadeIn">
-            Result: {result.toUpperCase()}
-          </p>
+          <div className="space-y-2 animate-fadeIn">
+            <h2 className="text-2xl font-bold text-yellow-700">
+              Result: {result.toUpperCase()}
+            </h2>
+            <p className="text-gray-600">
+              Your coin flip landed on {result}. Need another flip? Just click the coin again!
+            </p>
+          </div>
         )}
         {isFlipping && (
-          <p className="flipping-text text-gray-600">Coin is flipping...</p>
+          <p className="text-xl text-gray-600 animate-pulse">
+            Flipping coin...
+          </p>
         )}
+      </div>
+
+      <div className="keyboard-instructions text-sm text-gray-500 mt-4">
+        <p>
+          Keyboard users: Press Enter or Space to flip the coin
+        </p>
       </div>
     </div>
   );

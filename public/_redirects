@@ -1,4 +1,4 @@
-# Common misspellings and variations
+# Primary variations
 /coinflip              /
 /coin-flip             /
 /flipcoin              /
@@ -11,12 +11,35 @@
 /heads-or-tails        /
 /headsortails          /
 
-# Legacy URLs and alternates
+# Common search phrases
 /random-coin-flip      /
 /virtual-coin-flip     /
 /online-coin-flip      /
 /coin-flip-simulator   /
 /coin-flipper          /
+/random-decision       /
+/decision-maker        /
+/best-coin-flip        /
+/fair-coin-flip        /
+/free-coin-flip        /
+
+# Plural variations
+/coins                 /
+/flips                 /
+/tosses                /
+/decisions             /
+
+# Language variations
+/flip-a-coin           /
+/toss-a-coin          /
+/flip-the-coin        /
+/toss-the-coin        /
+
+# Feature-based URLs
+/3d-coin-flip         /
+/animated-coin-flip    /
+/instant-coin-flip     /
+/fair-random-flip      /
 
 # Handle 404s with custom page
 /*                     /index.html   200
