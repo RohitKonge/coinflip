@@ -9,7 +9,7 @@ Allow: /random-decision
 Allow: /about
 Allow: /privacy
 Allow: /terms
-
+Allow: /sitemap.xml
 # Optimize crawl rate
 Crawl-delay: 1
 
